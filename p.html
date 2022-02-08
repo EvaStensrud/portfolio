@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>planets</title>
+    <p><a href="index.html"class="italic" font-family="'Sriracha', cursive;">Home</a></p>
+    <h1>what if the gods just play marbles in space </h1>
+
+    <script src="libraries/p5.min.js"></script>
+    <script src="libraries/p5.sound.min.js"></script>
+    
+    
+    <link rel="stylesheet" href="style.css">
+    
+    
+<style>
+
+
+h1{
+    color: rgb(36, 9, 187);
+}
+head{
+    background-color: black;
+}
+body{
+    background-color: black;
+}
+
+</style>
+
+ <script language="javascript" type="text/javascript" src="libraries/p5.min.js"></script>
+  </head>
+
+  <body>
+    <script>
+
+      let img;
+      let img2;
+      let img3;
+      let img4;
+      let img5;
+
+      function preload(){
+        img = loadImage("libraries/Marble2.jpg")
+        img2 = loadImage("libraries/Marble3.jpg")
+        img3 = loadImage("libraries/Marble6.jpg")
+        img4 = loadImage("libraries/Marble5.jpg")
+        img5 = loadImage("libraries/Marble15.jpg")
+      }
+
+function setup(){
+  createCanvas(windowWidth, windowHeight, WEBGL)
+
+}
+
+function draw(){
+
+  let size = random*30
+background(0);
+fill(255);
+noStroke();
+let xSize = random(50);
+rotateX(frameCount * 0.005);
+rotateY(frameCount * 0.005);
+texture(img);
+sphere(50);
+
+translate(-windowWidth/3, 0, 0);
+texture(img5);
+sphere(50);
+
+translate(windowWidth/2, 0, 0);
+texture(img4);
+sphere(30);
+
+translate(windowHeight/2, 0, 0);
+texture(img2);
+sphere(30);
+
+push();
+rotateZ(frameCount * 0.005);
+rotateY(frameCount * 0.005);
+translate(-windowHeight/3, 0, 0);
+texture(img3);
+sphere(50);
+pop();  
+}
+
+
+
+
+
+
+//sphere(size);
+
+
+
+</script>
+  </body>
+</html>

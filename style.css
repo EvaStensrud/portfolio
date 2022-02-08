@@ -1,0 +1,37 @@
+h1 {
+    margin: 20px;
+    padding: 20px;
+    color: black;
+    font-family: 'Sriracha', cursive;
+    font-style: italic;
+    text-align: left;
+}
+p {
+    color: white;
+    font-family: 'Sriracha', cursive;
+    font-size: 20;
+
+}
+
+body {
+    margin: 20px;
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    font-size: 200;
+    color: black;
+    font-family: 'Sriracha', cursive;
+    font-style:italic;
+    background-color: rgb(36, 9, 187);
+    user-select: none;
+}
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+  img {
+      width: 50px;
+      height: 50px;
+  }
