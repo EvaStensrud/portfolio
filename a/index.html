@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>variations of an a</title>
+    <link rel="stylesheet" href="/style.css">
+  </head>
+
+  <body>
+
+    <canvas></canvas>
+
+    <overlay id="overlay">
+        <div>press the a key.</div>
+    </overlay>
+
+      <p id="back"><a href="/"class="italic" font-family="'Sriracha', cursive;">Home</a></p>
+      <!--<h1>press the a key. </h1>-->
+<!--
+<div id="overlay"></div>   
+--> 
+<script language="javascript" type="text/javascript" src="/_library/p5.min.js"></script>
+     
+
+<script src="/overlay.js"></script>
+
+<script>
+
+var fade;
+var fadeAmount = 1
+let value = 0;
+let drawA = false; 
+var i = 0;
+
+
+
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+  fade = 0;
+  x = 380;
+  y = 140;
+  x2 = 430;
+  y2 = 140;
+  speed = 1;
+  //strokeWeight(10);
+  //stroke(0);
+}
+
+function draw() {
+  background(36, 9, 187);
+
+
+  push()
+  if (drawA == true) {
+    strokeWeight(13);
+  stroke(0);
+    line(580, 105, 615, 135);
+  //line(580, 135, 615, 105);
+  }
+  pop()
+
+
+  textSize(200);
+  textAlign(CENTER, CENTER);
+  text("a", 200, 200);
+  text("a", 400, 200);
+  text("a", 600, 200);
+  text("a", 800, 200);
+  text("a", 1000, 200);
+
+  push();
+  i = i+1; 
+
+  if (i % 30 === 0){
+    // fill with 50
+  	fill(0);
+      text("^", 1000, 150);;
+  } else {
+    // all the otehr times, fill with 255
+    fill(255);
+  }
+  pop();
+
+  fill(0);
+  ellipse(x, y, 20);
+  ellipse(x2, y2, 20);
+  /*strokeWeight(15);
+  stroke(0);
+  //drawingContext.setLineDash([5, 15]);
+  line(580, 105, 615, 135);*/
+  //line(580, 135, 615, 105);
+  
+//ball on Swedish a
+
+  push();
+  fill(0, 0, 0, fade)
+  strokeWeight(7);
+  stroke(0, 0, 0);
+  ellipse(200, 129, 40)
+  if (fade<0) fadeAmount=1; 
+ 
+  if (fade>255) fadeAmount=-10; 
+ 
+  fade += fadeAmount; 
+  pop();
+  
+//points on German a
+
+  x = x + random(-1, 1);
+  y2 = y2 + random(-1, 1);
+  y = y - speed;
+  x2 = x2 + speed;
+  if (y < 0) {
+    y = 140;
+    x = 380;
+    if (y2 < 400){
+     y2 = 140;
+    x2 = 430; 
+    }
+}
+push()
+noFill();
+stroke(36, 9, 187);
+  strokeWeight(13)
+line(770, 113, 770, 128);
+line(819, 113, 819, 128);
+stroke(0, 0, 0);
+bezier(770, 113, 770, 128, 819, 113, 819, 128);
+pop()
+  //accents on French a    
+
+}
+
+function keyTyped(){
+    if (key == 'a') {
+  drawA = !drawA;
+  console.log(drawA)
+}
+    //line(580, 105, 615, 135);
+}
+
+
+
+
+    </script>
+
+    </body>
+    </html>
+   
+    <!---<script src="swedisha.js" async></script>-->
+
+    <!--<script src="germana.js" async></script>-->

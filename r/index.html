@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rotation</title>
+    <link rel="stylesheet" href="/style.css">
+  </head>
+
+  <body>
+
+    <canvas></canvas>
+
+    <overlay id="overlay">
+        <div>20 two-dimensional planes rotating in a three-dimension space.</div>
+    </overlay>
+
+      <p id="back"><a href="/"class="italic" font-family="'Sriracha', cursive;">Home</a></p>
+      <!--<h1>press the a key. </h1>-->
+<!--
+<div id="overlay"></div>   
+--> 
+<script language="javascript" type="text/javascript" src="/_library/p5.min.js"></script>
+
+<script src="/overlay.js"></script>
+
+    <script>
+
+let size = 200;   
+    let spacing; 
+        
+function setup(){
+  createCanvas(windowWidth, windowHeight, WEBGL)
+ 
+}
+
+function draw(){
+
+    
+    background(36, 9, 187);
+    
+    //plane(size);
+  
+    for(let i = 0; i<20; i++){
+    
+    rotateY(frameCount * 0.001);
+    rotateX(frameCount * 0.001);
+    noFill();
+      plane(size);
+    
+      /*translate(-(windowWidth / 2) + size, 0, 0)
+
+      
+      for(let i = 0; i<20; i++){
+    
+    rotateY(frameCount * 0.001);
+    rotateX(frameCount * 0.001);
+    noFill();
+      plane(size);
+      }*/
+         
+        
+    
+  }
+}
+
+
+</script>
+  </body>
+</html>

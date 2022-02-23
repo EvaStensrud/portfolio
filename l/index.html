@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>looking glass.</title>
+    <link rel="stylesheet" href="/style.css">
+  </head>
+
+  <body>
+
+    <canvas></canvas>
+
+    <overlay id="overlay">
+        <div>there's some poetry by rolf hermann hidden on the page. use your mouse as a looking glass to search for it.</div>
+    </overlay>
+
+      <p id="back"><a href="/">Home</a></p>
+      
+<script language="javascript" type="text/javascript" src="/_library/p5.min.js"></script>
+     
+<script>
+  setTimeout(() => {
+      document.getElementById("overlay").style.opacity = 0
+      }, 3500);
+  </script>
+
+<style>
+
+  head{
+      background-color: rgb(36, 9, 187);
+  }
+  body{
+      background-color: black;
+  }
+  </style>
+
+     <script>
+
+let font,
+  fontsize = 40;
+
+function setup() {
+  createCanvas(800, 400);
+  noCursor();
+  
+
+  textSize(fontsize);
+  textAlign(CENTER, CENTER);
+}
+
+
+let value = (36, 9, 187);
+function draw() {
+  noCursor();
+  background(36, 9, 187);
+  
+  erase(100, 0);
+ellipse(mouseX, mouseY, 150);
+noErase();
+
+  
+  textAlign(LEFT);
+  drawWords(width * 0.1);
+
+}
+
+function drawWords(x) {
+  
+  fill(36, 9, 187);
+  text('Es Bei', x, 30);
+
+  fill(36, 9, 187);
+  text('chunt sälte elei', x, 100);
+
+  fill(36, 9, 187);
+  text('mängi Tier', x, 170);
+
+  fill(36, 9, 187);
+  text('hei vier', x, 240);
+  
+  fill(36, 9, 187);
+  text('u bim Schnägg', x, 310);
+  
+  fill(36, 9, 187);
+  text('fallts wäg', x, 380);
+  
+}
+
+setTimeout(() => {
+  document.getElementById("overlay").remove()
+  }, 3000);
+</script>

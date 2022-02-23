@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>short story</title>
+    <link rel="stylesheet" href="/style.css">
+  </head>
+
+  <body>
+
+    <canvas></canvas>
+
+    <overlay id="overlay">
+        <div>carte blanche! write your own short story.</div>
+    </overlay>
+
+      <p id="back"><a href="/">Home</a></p>
+      <!--<h1>press the a key. </h1>-->
+<!--
+<div id="overlay"></div>   
+--> 
+<script language="javascript" type="text/javascript" src="/_library/p5.min.js"></script>
+     
+
+<script src="/overlay.js"></script>
+
+<style>
+  body{
+    background-color: black;
+  }
+</style>
+
+<script>
+
+let message = "";
+
+function setup(){
+  createCanvas(windowWidth, windowHeight);
+  textSize(30);
+  fill(36, 9, 187);
+  noStroke();
+  textFont('Sriracha')
+}
+
+function draw(){
+  background(0);
+  text(message, 10, 50);
+}
+
+function keyPressed(){
+	// First check if the key is something we want to type.
+  if (key.length == 1 && key.match(/[\S,\ ,\n]/)) {
+    message = message + key;
+  // Otherwise, if it is the backspace key remove one charater.
+  } else if (keyCode == BACKSPACE || keyCode == DELETE){
+    message = message.substr(0, message.length - 1);
+	// If it is the enter key, then add a newline.
+  } else if (keyCode == ENTER){
+  	message += "\n";
+  }
+  return false;
+}
+
+function mousePressed(){
+    message=""
+}
+</script>
+</body>

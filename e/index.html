@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eva</title>
+    <link rel="stylesheet" href="/style.css">
+  </head>
+
+  <body>
+
+    <canvas></canvas>
+
+    <overlay id="overlay">
+        <div>eva (name), meaning life, living one, full of life or mother of life. she grows with every click.</div>
+    </overlay>
+
+      <p id="back"><a href="/"class="italic" font-family="'Sriracha', cursive;">Home</a></p>
+      <!--<h1>press the a key. </h1>-->
+<!--
+<div id="overlay"></div>   
+--> 
+<script language="javascript" type="text/javascript" src="/_library/p5.min.js"></script>
+     
+
+<script>
+    setTimeout(() => {
+        document.getElementById("overlay").style.opacity = 0
+        }, 3500);
+    </script>
+
+
+     <script>
+
+let x, y, r, g, b;
+let fontsize = 15;
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+  //background(36, 9, 187);
+}
+
+function draw() {
+    background(36, 9, 187)
+  r = 0;
+  g = random(255);
+  b = random(255);
+  x = random(width);
+  y = random(height);
+  noStroke();
+  fill(r, g, b, 100);
+  //circle(x, y, 24)
+  textSize(fontsize);
+  text('EVA', x, y)
+  frameRate(5);
+}
+
+function mousePressed() {
+  fontsize = fontsize + 15
+  if (fontsize > 250) {
+    fontsize = 15;
+  }
+}
+</script>

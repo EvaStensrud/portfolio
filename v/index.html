@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vanity</title>
+    <link rel="stylesheet" href="/style.css">
+  </head>
+
+  <body>
+<style>
+  canvas {
+    margin: 20px;
+    padding: 20px;
+  }
+</style>
+    <canvas></canvas>
+
+    <overlay id="overlay">
+        <div>all is vanity. didn't manage to read to the end? click to stop vanity.</div>
+    </overlay>
+
+      <p id="back"><a href="/">Home</a></p>
+       
+<script language="javascript" type="text/javascript" src="/_library/p5.min.js"></script>
+     
+
+<script src="/overlay.js"></script>
+
+    <script>
+
+
+
+ let txt="Du siehst, wohin du siehst, nur Eitelkeit auf Erden.\nWas dieser heute baut, reißt jener morgen ein:\nWo jetzt noch Städte stehn, wird eine Wiese sein,\n Auf der ein Schäferskind wird spielen mit den Herden.\n \n Was jetzt noch prächtig blüht, soll bald zertreten werden.\nWas jetzt so pocht und trotzt, ist morgen Asch’ und Bein,\nNichts ist, das ewig sei, kein Erz, kein Marmorstein.\nJetzt lacht das Glück uns an, bald donnern die Beschwerden.\n \n Der hohen Taten Ruhm muss wie ein Traum vergehn.\nSoll denn das Spiel der Zeit, der leichte Mensch, bestehn?\nAch! Was ist alles dies, was wir für köstlich achten,\n \nAls schlechte Nichtigkeit, als Schatten, Staub und Wind;\nAls eine Wiesenblum’, die man nicht wieder find’t.\nNoch will, was ewig ist, kein einzig Mensch betrachten!\n \n Andreas Gryphius";
+let fr = 20;
+
+function setup(){
+  createCanvas(windowWidth, windowHeight);
+  
+  background(36, 9, 187);  
+  frameRate(fr);
+  fill(255);
+  noStroke();
+  
+  textFont('Sriracha');
+  textSize(15);
+
+  textAlign(LEFT);
+  //text(txt, width / 2 - 13, height / 2 - 56);
+  text(txt, 10, 10, 800, 400);
+}
+
+function draw(){
+  fill(36, 9, 187);
+  let s = random(25);
+  ellipse(random(width), random(height), s, s);
+}
+
+function mousePressed(){
+    setup();
+}
+
+    </script>
+    </body>

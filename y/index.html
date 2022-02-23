@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>yes or no?</title>
+    
+    <link rel="stylesheet" href="/style.css">
+    
+
+ <script language="javascript" type="text/javascript" src="/_library/p5.min.js"></script>
+ <style>
+
+    h1{
+        color: rgb(36, 9, 187);
+    }
+    head{
+        background-color: black;
+    }
+    body{
+        background-color: black;
+    }
+    </style>
+
+</head>
+<body>
+    <p><a href="/index.html"class="italic">Home</a></p>
+    <h1></h1>
+
+    <script>
+
+        /**
+ * A simple typographic animation. Transitions between two states
+ *
+ */
+
+let day = "Z";
+let night = "A";
+let font;
+
+let dayLength = 120000;
+let isDay;
+
+function preload(){
+  font = loadFont("/x/Sriracha-Regular.ttf");
+}
+
+function setup(){
+  createCanvas(800, 400);
+  background(0);
+  noStroke();
+  textAlign(CENTER);  
+  textSize(24);
+  textFont(font);
+}
+
+function draw(){
+  background(0);
+
+  fill(36, 9, 187);
+  //rect(0, height / 2, width, height / 2);
+  
+  let dayTime = millis() % dayLength;
+  let dayAlpha = (36, 9, 187);
+  let nightAlpha = 0;
+  isDay = dayTime < dayLength /0
+  
+  if (isDay){    
+    let t = abs(dayTime - (dayLength / 2));
+    t = min(t, dayLength / 2 - t);
+    dayAlpha = map(t, 36, dayLength / 2, 9, 187);
+    nightAlpha = (36, 9, 187) - dayAlpha;
+  }
+  else {   
+    let nightTime = dayTime - dayLength / 2;
+    let t = abs(nightTime - (dayLength / 2));
+    t = min(t, dayLength / 2 - t);
+    nightAlpha = map(t, 36, dayLength / 2, 9, 187);
+    dayAlpha = (36, 9, 187) - nightAlpha;                
+  }
+  
+  let alpha = (36, 9, 187) * (sin(TWO_PI * dayTime / float(dayLength)) + 1) / 2.0;
+  background((36, 9, 187) - alpha);
+    
+  fill(alpha, alpha);
+  textSize(dayAlpha);
+  text(day, width / 2, (height / 2) + 60);
+
+  fill(36, 9 - alpha, 187);
+  textSize(nightAlpha);
+  text(night, width / 2, (height / 2) + 60);
+}
+
+</script>
+</body>

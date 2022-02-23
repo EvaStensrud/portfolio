@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>xxx</title>
+    <link rel="stylesheet" href="/style.css">
+  </head>
+
+  <body>
+
+    <canvas></canvas>
+
+    <overlay id="overlay">
+        <div>find the center of the cross.</div>
+    </overlay>
+
+    <p id="back"><a href="/">Home</a></p>
+    
+<script language="javascript" type="text/javascript" src="/_library/p5.min.js"></script>
+     
+
+<script src="/overlay.js"></script>
+
+ <style>
+
+    h1{
+        color: rgb(36, 9, 187);
+    }
+    head{
+        background-color: black;
+    }
+    body{
+        background-color: black;
+    }
+    </style>
+
+</head>
+<body>
+    
+
+    <script>
+
+let font;
+let points;
+let bounds;
+
+function preload() {
+  font = loadFont('Sriracha-Regular.ttf');
+}
+
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+
+  points = font.textToPoints(
+    'xxxxx', 0, 0, 200, {
+      sampleFactor: 1,
+      simplifyThreshold: 0
+    });
+
+  bounds = font.textBounds(
+    'xxxxx', 0, 0, 200);
+
+  cursor(CROSS);
+  fill(255, 127);
+  noStroke();
+}
+
+function draw() {
+  background(0);
+  stroke(36, 9, 187);
+  line(width / 2, 0, width / 2, height);
+  line(0, height / 2, width, height / 2);
+  noStroke();
+  
+  let centerDist = dist(mouseX, mouseY, width / 2, height / 2);
+
+  let transparency = map(centerDist, 0, width / 2, 200, 50);
+  transparency = constrain(transparency, 50, 200);
+	fill(255, transparency);
+  
+  let jiggle = map(centerDist, 0, width, 1, 300);
+
+  translate((width - abs(bounds.w)) / 2, 
+            (height + abs(bounds.h)) / 2);
+  
+  
+  for (let i = 0; i < points.length; i++) {
+    let p = points[i];
+    ellipse(p.x + jiggle * randomGaussian(), 
+      p.y + jiggle * randomGaussian(), 5, 5);
+  }
+}
+setTimeout(() => {
+  document.getElementById("overlay").remove()
+  }, 3000);
+</script>
+</body>

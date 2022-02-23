@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>poetry machine</title>
+    <link rel="stylesheet" href="/style.css">
+  </head>
+
+  <body>
+
+    <canvas></canvas>
+
+    <overlay id="overlay">
+        <div>generate a dadistic poem with every click. raw material: three poems by jürg halter, "so leicht", "mein liebstes lied", "ich bin ein schwarzer, in die mitte des denkens fliehender punkt"</div>
+    </overlay>
+
+      <p id="back"><a href="/"class="italic" font-family="'Sriracha', cursive;">Home</a></p>
+      <!--<h1>press the a key. </h1>-->
+<!--
+<div id="overlay"></div>   
+--> 
+<script language="javascript" type="text/javascript" src="/_library/p5.min.js"></script>
+     
+<script>
+setTimeout(() => {
+    document.getElementById("overlay").style.opacity = 0
+    }, 3500);
+</script>
+
+    <script>
+
+let lines = [];
+let words = [];
+
+ 
+  function preload(){
+  lines = loadStrings("Gedicht.txt"); 
+  }
+
+
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+  fill(255);
+  textFont('Sriracha');
+  textSize(20);
+  
+  // slice up text from source into array
+  for (let i = 0; i < lines.length; i++) {
+    let pieces = split(lines[i], " ");
+
+    // Add the pieces to the larger array;
+    for (let j = 0; j < pieces.length; j++) {
+      let word = pieces[j];
+      if (word.length > 0) {
+        words = append(words, word);
+      }
+    }
+  }
+}
+
+function draw() {
+  makePoem();
+  noLoop();
+}
+
+function mousePressed() {
+  makePoem();
+  loop();
+}
+
+function makePoem() {
+  background(36, 9, 187);
+  
+  let i = 0; 
+  let j = 0;
+  let sentenceLength = 0;
+  let poemLength = min(8, int(5 + random(10)));
+  let stanzaLength = int(random(5) + 2);
+  let next;
+  let word;
+  let theLine = "";
+  let spacing = "";
+
+  while (poemLength >= 0) {
+    next = int(random(words.length));
+    word = words[next];
+
+    theLine += spacing + word;
+    spacing = " ";
+    sentenceLength++;
+
+    // Print out a line every now and again...
+    if (sentenceLength > 10 || (random(sentenceLength) > 2.5 && word.length > 1)) {
+      text(theLine, 20, (j * 40) + 50 + random(5));
+      j++;
+      for (let s = int (random (4)); s > 0; s--) {
+        spacing += " ";
+      }
+      theLine = "";
+      sentenceLength = 0;
+      if (poemLength % stanzaLength == 0) {
+        j++;
+      }
+      poemLength--;
+    }
+  }
+}
+
+</script>
+
+</body>

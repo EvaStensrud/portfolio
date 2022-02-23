@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>underneath</title>
+    <link rel="stylesheet" href="/style.css">
+  </head>
+
+  <body>
+
+    <canvas></canvas>
+
+    <overlay id="overlay">
+        <div>use your mouse as an eraser to uncover a short paragraph from "tamangur", a novel by leta semadeni.</div>
+    </overlay>
+
+      <p id="back"><a href="/">Home</a></p>
+     
+<script language="javascript" type="text/javascript" src="/_library/p5.min.js"></script>
+     
+
+<script src="/overlay.js"></script>
+
+
+
+     <script>
+
+  fontsize = 20;
+
+
+
+function setup() {
+  createCanvas(windowWidth, 400);
+  background(255);
+  noCursor();
+  textSize(fontsize);
+  textFont('Sriracha');
+}
+
+//let value = (255);
+function draw() {
+  
+  erase(40, 0);
+ellipse(mouseX, mouseY, 50);
+noErase();
+
+  
+  textAlign(LEFT);
+  fill(255);
+  
+  text("Auf der Suche nach dem Nichts irrten die Männer ihr Leben lang auf ihren Kamelen durch die Wüste. In ihren Satteltaschen trugen sie nur das Notwendigste mit sich. Das raue, den Sandstürmen ausgesetzte Leben machte ihre Seele hart und undurchlässig für die Mitteilungen des Windes.\n\nEinmal im Jahr musste darum jeder Reiter die Schamanin am Mondsichelsee aufsuchen, um die seelischen Verhornungen behandeln zu lassen.\nDer Mondsichelsee wurde von zwei riesigen Sanddünen geschaukelt und war nur bei Vollmond  zu erreichen.\n\nJeder Reiter musste seinen persönlichen Bimsstein mitbringen, um geheilt zu werden. Verlor er seinen Stein, so wurde er aus dem Stamm der «Reiter-ins-Nichts» verstossen.\n\nDie Schamanin befreite die betroffenen Stellen von der Hornhaut, indem sie diese in langsamen, kreisenden Bewegungen mit dem Stein bearbeitete. Es ist nicht bekannt, ob je ein Mitglied der «Reiter-ins-Nichts» das Nichts wirklich gefunden hat.\n\nVielleicht irren sie immer noch rastlos durch die Weiten der Wüste Taklamakan und lassen ihre verkrusteten Seelen von der Schamanin am Mondsichelsee verarzten.", 10, 30, windowWidth, 400)
+}
+
+</script>

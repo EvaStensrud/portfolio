@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>confetti</title>
+    <link rel="stylesheet" href="/style.css">
+  </head>
+
+  <body>
+
+    <canvas></canvas>
+
+    <overlay id="overlay">
+        <div>my son loves confetti. this one's for him. (click to see a photo of him collecting confetti.)</div>
+    </overlay>
+
+      <p id="back"><a href="/"class="italic" font-family="'Sriracha', cursive;">Home</a></p>
+      <!--<h1>press the a key. </h1>-->
+<!--
+<div id="overlay"></div>   
+--> 
+<script language="javascript" type="text/javascript" src="/_library/p5.min.js"></script>
+     
+
+<script src="/overlay.js"></script>
+<script>
+
+let x, y, r, g, b;
+let confetti;
+
+function preload(){
+    confetti = loadImage("/_library/IMG_1764.jpg")
+}
+
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+  background(36, 9, 187);
+}
+
+function draw() {
+  r = random(255);
+  g = random(255);
+  b = random(255);
+  x = random(width);
+  y = random(height);
+  noStroke();
+  fill(r, g, b, 100);
+  circle(x, y, 24)
+
+  
+}
+  /*if (mouseIsPressed){
+      image(confetti, mouseX, mouseY, [200], [200]);
+  }
+  else {
+    circle(x, y, 24)
+  }*/
+ 
+
+function mousePressed(){
+    image(confetti, mouseX, mouseY, [150], [150])
+}
+
+</script>
+</body>
