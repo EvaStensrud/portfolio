@@ -13,7 +13,7 @@
     <canvas></canvas>
 
     <overlay id="overlay">
-        <div>hello human. how are you?</div>
+        <div>are you human though?</div>
     </overlay>
 
       <p id="back"><a href="/"class="italic" font-family="'Sriracha', cursive;">Home</a></p>
@@ -54,8 +54,22 @@ function draw() {
     fill(0)
     text(myText, x+20, y+40)   
 }
+if (mouseIsPressed === true) {
+    if (mouseButton === LEFT) {
+        fill('red');
+        noStroke()
+ellipse(66.6, 66.6, 20, 20);
+ellipse(83.2, 66.6, 20, 20);
+triangle(91.2, 72.6, 75, 95, 58.6, 72.6);
+    if (mouseButton === RIGHT) {
+      background(64, 64, 64);
+    }
+}
+
+  }
   }
 
+  
 setTimeout(() => {
   document.getElementById("overlay").remove()
   }, 3000);

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>what goes around</title>
+    <title>wind</title>
     <link rel="stylesheet" href="/style.css">
   </head>
 
@@ -13,67 +13,58 @@
     <canvas></canvas>
 
     <overlay id="overlay">
-        <div>sound on and click.</div>
+        <div>blowing in the wind.</div>
     </overlay>
 
-      <p id="back"><a href="/">Home</a></p>
-      
-
+      <p id="back"><a href="/"class="italic" font-family="'Sriracha', cursive;">Home</a></p>
+      <!--<h1>press the a key. </h1>-->
+<!--
+<div id="overlay"></div>   
+--> 
 <script language="javascript" type="text/javascript" src="/_library/p5.min.js"></script>
      
 
 <script src="/overlay.js"></script>
 
- <script src="/_library/p5.sound.min.js"></script>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.3.1/addons/p5.sound.min.js"></script>
+<script>
 
- <script>
-
-     let mySong;
-     function preload(){
-        //soundFormats('mp3', 'ogg');
-        mySong = loadSound("/_library/What Goes Around Comes Around.mp3");
-     }
-     
-     
- function setup() {
-    //mySong = loadSound('What Goes Around...Comes Around.mp3');
-    createCanvas(1600, 400);
-  }
-  let a = 0
-  
-  function draw() {
-    background(36, 9, 187);
     
-    let factor = sin(a)
-    let maxAmplitude = 1000
-    let posX = factor * maxAmplitude
-    fill(255) 
-    textSize(80)
-    text("WHAT GOES AROUND COMES AROUND", posX, 225)
+        </script>
     
-    a+=0.01
-  }
 
-  /*function mousePressed() {
-  if (mySong.isPlaying()) {
-    // .isPlaying() returns a boolean
-    mySong.pause(); // .play() will resume from .pause() position
-    background(255, 0, 0);
-  } else {
-    mySong.play();
-    background(0, 255, 0);
-  }
-}*/
+    
+    <script language="javascript" type="text/javascript" src="/simplex-noise.min.js"></script>
+    <script src="schilf.js" async></script>
 
-function mousePressed() {
-  if (mySong.isPlaying()) {
-    // .isPlaying() returns a boolean
-    mySong.stop();
-    background(255, 0, 0);
-  } else {
-    mySong.play();
-    background(0, 255, 0);
-  }
-}
-</script>
+
+
+</body>
+
+<style>
+    body {
+        margin: 0px;
+        padding: 0px;
+        font-size: 5;
+        font-family: 'Sriracha', cursive;
+        color: black;
+        background-color: rgb(36, 9, 187);
+        
+        user-select: none;
+    }
+
+    stage,
+    svg,
+    path {
+        position: fixed;
+        overflow: visible;
+    }
+</style>
+
+</head>
+
+
+
+</html> 
+
+
+

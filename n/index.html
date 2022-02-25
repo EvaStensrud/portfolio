@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nil</title>
+    <link rel="stylesheet" href="/style.css">
+  </head>
+
+  <body>
+
+    <canvas></canvas>
+
+    <overlay id="overlay">
+        <div>nothing there.</div>
+    </overlay>
+
+      <p id="back"><a href="/">Home</a></p>
+      
+<script language="javascript" type="text/javascript" src="/_library/p5.min.js"></script>
+     
+<script>
+  setTimeout(() => {
+      document.getElementById("overlay").style.opacity = 0
+      }, 3500);
+  </script>
+
+<script>
+
+    let fade; 
+
+    let fadeAmount = 3;
+function setup() {
+    createCanvas(windowWidth, windowHeight);
+    textSize(100)
+    fade = 0
+  }
+  
+  function draw() {
+    background(36, 9, 187);
+    fill(40, 15, 250, fade)
+    text("hello", 100,100)
+    text("world", 200, 200)
+    text("is anyone there", 300, 300)
+    text("nil", 1100, 400)
+    if (fade<0) fadeAmount=0.5; 
+   
+    if (fade>255) fadeAmount=-100; 
+   
+    fade += fadeAmount; 
+  }
+  setTimeout(() => {
+      document.getElementById("overlay").style.opacity = 0
+      }, 2500);
+</script>
+  </body>
+</html>

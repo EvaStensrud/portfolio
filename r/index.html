@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>rotation</title>
+    <title>round and round</title>
     <link rel="stylesheet" href="/style.css">
   </head>
 
@@ -13,59 +13,72 @@
     <canvas></canvas>
 
     <overlay id="overlay">
-        <div>20 two-dimensional planes rotating in a three-dimension space.</div>
+        <div>might cause nausea.</div>
     </overlay>
 
-      <p id="back"><a href="/"class="italic" font-family="'Sriracha', cursive;">Home</a></p>
-      <!--<h1>press the a key. </h1>-->
-<!--
-<div id="overlay"></div>   
---> 
+      <p id="back"><a href="/">Home</a></p>
+      
+
 <script language="javascript" type="text/javascript" src="/_library/p5.min.js"></script>
+     
 
 <script src="/overlay.js"></script>
 
-    <script>
+ <script src="/_library/p5.sound.min.js"></script>
+ <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.3.1/addons/p5.sound.min.js"></script>-->
 
-let size = 200;   
-    let spacing; 
-        
-function setup(){
-  createCanvas(windowWidth, windowHeight, WEBGL)
- 
-}
+ <script>
 
-function draw(){
+     /*let mySong;
 
-    
-    background(36, 9, 187);
-    
-    //plane(size);
-  
-    for(let i = 0; i<20; i++){
-    
-    rotateY(frameCount * 0.001);
-    rotateX(frameCount * 0.001);
-    noFill();
-      plane(size);
-    
-      /*translate(-(windowWidth / 2) + size, 0, 0)
-
-      
-      for(let i = 0; i<20; i++){
-    
-    rotateY(frameCount * 0.001);
-    rotateX(frameCount * 0.001);
-    noFill();
-      plane(size);
-      }*/
-         
-        
+     function preload() {
+         soundFormats("mp3", "ogg");
+        mySong = loadSound("/What Goes Around Comes Around.mp3");
+     }*/
+    let r = 36;
+    let g = 9;
+    let b = 187;
+ function setup() {
+    //mySong = loadSound('What Goes Around...Comes Around.mp3');
+    createCanvas(1600, 400);
     
   }
-}
+  let a = 0
+  
+  function draw() {
+    background(36, 9, 187);
+    
+    let factor = sin(a)
+    let factor2 = cos(a)
+    let maxAmplitude = 1300
+    let posX = factor * maxAmplitude
+    let posY = factor2 * maxAmplitude
+    posZ = factor * 500
+    fill(255, 255, 0)
+    textSize(80);
+    textFont('Sriracha');
+    text("WHAT GOES AROUND COMES AROUND", posX, 225);
+    text("MERRY-GO-ROUND", posY, 100)
+    text("ROUND AND ROUND WE GO", posZ, 350)
+    
+    a+=0.01
+  }
 
+  
 
+/*function mousePressed() {
+  if (mySong.isPlaying()) {
+    // .isPlaying() returns a boolean
+    mySong.stop();
+    background(255, 0, 0);
+  } else {
+    mySong.play();
+    background(0, 255, 0);
+  }
+}*/
+setTimeout(() => {
+  document.getElementById("overlay").remove()
+  }, 3000);
 </script>
-  </body>
+</body>
 </html>
