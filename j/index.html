@@ -32,27 +32,58 @@
     <script>
 let myText = [];
 
+
 function preload(){
   myText = loadStrings("javascript.txt"); 
+  myText2 = ("ich habe geträumt\ndu hast eine geküsst\nund dann habe ich dich zerstückelt\n\ndas stimmt doch nicht\nsagst du\n\nda glaube ich es selber nicht mehr\naber es bleibt doch dieses bild\nwie ich deinen kopf an den haaren herumtrage\n\nmichelle steinbeck");
   }
 
-  let hoverOverMe;
 let showInfo = false;
         function setup(){
             createCanvas(windowWidth, windowHeight);
             textFont('Sriracha')
             textSize(20);
-            
-
         }
         
         function draw(){
             background(36, 9, 187)
             textAlign(CENTER)
             text(myText, (windowWidth/2)-450, 0, 800, 400)
+            //let a = createA("https://www.google.ch/", 'this is a link');
+            //a.position(0, 0);
+
+            if (mouseIsPressed === true) {
+                //if (mouseButton === LEFT) {
+    
+            if (mouseX>100 && mouseX<1000 && mouseY>100 && mouseY<1000){
+                myText = myText2;
+
+                //if (mouseIsPressed === true) {
+                /*if (mouseButton === LEFT) {
+                
+
+                if (mouseIsPressed === true) {
+                if (mouseButton === RIGHT) {
+                myText2 = myText;*/
+                
+                }
+            }
         }
         
-    
+                /*function mousePressed() {
+  if (text === myText) {
+    text(myText2, (windowWidth/2)-450, 0, 800, 400);
+  } else {
+    text(myText, (windowWidth/2)-450, 0, 800, 400)
+  }
+}
+function mouseReleased() {
+  if (text === myText) {
+    text(myText, (windowWidth/2)-450, 0, 800, 400);
+  } else {
+    text(myText2, (windowWidth/2)-450, 0, 800, 400);
+  }
+}*/
 
         </script>
         </body>

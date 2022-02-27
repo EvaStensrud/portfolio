@@ -10,21 +10,9 @@
 
   <body>
 
-    <canvas></canvas>
-
-    <overlay id="overlay">
-        <div>nothing there.</div>
-    </overlay>
-
       <p id="back"><a href="/">Home</a></p>
       
 <script language="javascript" type="text/javascript" src="/_library/p5.min.js"></script>
-     
-<script>
-  setTimeout(() => {
-      document.getElementById("overlay").style.opacity = 0
-      }, 3500);
-  </script>
 
 <script>
 
@@ -50,9 +38,7 @@ function setup() {
    
     fade += fadeAmount; 
   }
-  setTimeout(() => {
-      document.getElementById("overlay").style.opacity = 0
-      }, 2500);
+  
 </script>
   </body>
 </html>
