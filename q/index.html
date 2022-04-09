@@ -12,18 +12,9 @@
  </head>
 
  <body>
-  <canvas></canvas>
-
-  <overlay id="overlay">
-      <div>what's your name?</div>
-  </overlay>
 
   <p id="back"><a href="/">Home</a></p>
-    <script>
-      setTimeout(() => {
-          document.getElementById("overlay").style.opacity = 0
-          }, 2000);
-      </script>
+  
 
     <style>
       button {background-color: white;
@@ -72,6 +63,7 @@ function greet() {
   for (let i = 0; i < 200; i++) {
     push();
     fill(255, 255, 0);
+    textFont('Sriracha');
     translate(random(width), random(height));
     rotate(random(2 * PI));
     text(name, 0, 0);
@@ -79,9 +71,6 @@ function greet() {
   }
 }
 
-setTimeout(() => {
-  document.getElementById("overlay").remove()
-  }, 3000);
 </script>
 </body>
 </html>

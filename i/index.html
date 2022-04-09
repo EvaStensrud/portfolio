@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>i</title>
+    <link rel="stylesheet" href="/style.css">
+  </head>
+
+  <body>
+
+    <p id="back"><a href="/"class="italic" font-family="'Sriracha', cursive;">Home</a></p>
+    <script language="javascript" type="text/javascript" src="/_library/p5.min.js"></script>
+
+    <script>
+
+        let slider; 
+
+/*function setup (){
+createCanvas(windowWidth, windowHeight);
+colorMode(HSB);
+  slider = createSlider(60, 240, 60, 40);
+  slider.position(20, 350);
+  slider.style('width', '150px');
+
+}
+
+function draw (){
+    //background(36, 9, 187)
+    let val = slider.value();
+    background(val, 100, 100, 10);
+    fill(255, 255, 0)
+    rect(30, 20, 55, 55, 20);
+    rect(30, 100, 400, 100, 20);
+
+}
+
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+}
+
+function draw() {
+  if (mouseIsPressed) {
+    fill(0, 255, 255);
+  } else {
+    fill(255, 255, 0);
+  }
+  frameRate(15)
+  textSize(25)
+  textFont("Sriracha")
+  text("inspiration", mouseX, mouseY);
+}*/
+
+
+
+let sourceText = "inspiration comes and goes";
+let curIndex = 0;
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+  slider = createSlider(1, 20, 7)
+  slider.position(50, 200);
+  slider.style('width', '150px', 'color', 'yellow');
+  
+}
+function draw() {
+    
+    let val = slider.value()
+    
+  background(36, 9, 187);
+  fill(255, 255, 0);
+  textSize(144);
+  textFont("Sriracha");
+  textAlign(CENTER, CENTER);
+  text(
+    sourceText.substring(curIndex, curIndex+1),
+    width/2, height/2);
+  curIndex++;
+  if (curIndex > sourceText.length) {
+    curIndex = 0;
+    frameRate(val);
+  }
+}
+
+    </script>
+    </body>
+    </html>

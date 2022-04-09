@@ -10,12 +10,6 @@
 
   <body>
 
-    <canvas></canvas>
-
-    <overlay id="overlay">
-        <div>doodle something with your left mouse button. erase by clicking any key.</div>
-    </overlay>
-
       <p id="back"><a href="/"class="italic" font-family="'Sriracha', cursive;">Home</a></p>
       <!--<h1>press the a key. </h1>-->
 <!--
@@ -49,6 +43,7 @@
 
          function mouseDragged(){
              //background(36, 9, 187);
+             stroke(255, 255, 0)
              line(mouseX, mouseY, pmouseX, pmouseY);
          }
 
