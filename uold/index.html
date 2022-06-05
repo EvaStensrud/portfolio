@@ -8,40 +8,47 @@
     
     <link rel="stylesheet" href="/style.css">
     
-    <script language="javascript" type="text/javascript" src="/simplex-noise.min.js"></script>
+    <script language="javascript" type="text/javascript" src="/_library/p5.min.js"></script>
     
 
-</body>
 
 <p><a href="/index.html"class="italic" font-family="'Sriracha', cursive;">Home</a></p>
     
-    <h1>vera molnar. </h1>
 
-<style>
-    body {
-        margin: 0px;
-        padding: 0px;
-        width: 100%;
-        height: 100%;
-        font-size: 5;
-        font-family: 'Sriracha', cursive;
-        color: black;
-        background-color: rgb(36, 9, 187);
-        
-        user-select: none;
-    }
-
-    stage,
-    svg,
-    path {
-        position: fixed;
-        overflow: visible;
-    }
-</style>
 
 </head>
 
+<body>
+    <script>
+   let img;
+let cnv;
+function preload(){
+  img = loadImage("/_library/Eva.jpg");
+}
 
+function setup() {
+  cnv = createCanvas(img.width, img.height);
+  let newCanvasX = (windowWidth - img.width)/2;
+  let newCanvasY = (windowHeight - img.height)/2;
+  cnv.position(newCanvasX, newCanvasY);
+  for(let col = 0; col< img.width; col+=5){
+    for(let row = 0; row< img.height; row+=5){
+      let c = img.get(col, row);
+      stroke(color(c));
+      strokeWeight(5);
+      rect(col, row);
+    }
+  }
+}
+
+function keyPressed(){
+  if (key === 's'){
+    saveCanvas("portrait.jpg");
+  }
+}
+    </script>
+
+</body>
 
 </html> 
 

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>poetry machine</title>
+    <link rel="stylesheet" href="/style.css">
+  </head>
+
+  <body>
+    <script language="javascript" type="text/javascript" src="/_library/p5.min.js"></script>
+<script>
+
+    function setup() {
+        createCanvas(windowWidth, windowHeight);
+        background(36, 9, 187);
+      }
+      
+      function draw() {
+        fill(255, 0, 255, 5)
+        textSize(300);
+        textFont('Sriracha');
+        textAlign(CENTER, CENTER)
+        text('E', 200, 200)
+        fill(0, 255, 255, 5)
+        text('V', 200, 200)
+        fill(255, 255, 0, 5)
+        text('A', 200, 200)
+
+        fill(200, 255, 0)
+        rect(400, 400, 100, 30)
+        fill(0, 255, 255)
+        rect(400, 435, 100, 30)
+        fill(255, 128, 0)
+        rect(400, 470, 100, 30)
+        fill(255, 0, 255)
+        rect(510, 400, 100, 100)
+        fill(0, 100, 255);
+        noStroke();
+        triangle(560, 500, 510, 400, 610, 400)
+        fill(0, 255, 203)
+        rect(620, 400, 100, 100)
+        fill(220, 0, 0)
+        triangle(670, 400, 620, 500, 720, 500)
+      }
+
+    </script>
+    </body>
